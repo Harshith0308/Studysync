@@ -1,4 +1,4 @@
-<h1 align="center">📚 StudySync — Collaborative Learning Platform</h1>
+<h1 align="center">StudySync — Collaborative Learning Platform</h1>
 
 <p align="center">
   A full-stack web app where students form study groups, chat in real time,
@@ -17,7 +17,7 @@
 
 ---
 
-## ✨ Overview
+## Overview
 
 StudySync turns scattered group study into one organized space. A student signs up,
 creates a **study group** (or joins one with a 6-character invite code), and instantly
@@ -31,38 +31,38 @@ a **Node.js / Express REST API** with **Socket.io** for real-time messaging, and
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
-### 🔐 Register &amp; Login
+### Register &amp; Login
 Create an account as a student or admin, then sign in. Auth is handled with JWT + bcrypt.
 
 | Register | Login |
 | :---: | :---: |
 | ![Register screen](studysync/docs/images/register.png) | ![Login screen](studysync/docs/images/login.png) |
 
-### 🏠 Dashboard — your study groups
+### Dashboard — your study groups
 See every group you've joined as a card, create a new group, or join one with an invite code.
 
 ![Dashboard](studysync/docs/images/dashboard.png)
 
-### 💬 Group Room — real-time chat
+### Group Room — real-time chat
 Each group has a live chat (Socket.io), a member list, and a shared task checklist in the sidebar.
 
 ![Group chat](studysync/docs/images/group_chat.png)
 
-### 🤖 AI Study Assistant
+### AI Study Assistant
 Ask for explanations, summaries, and study tips — the assistant answers in the context of the group.
 
 ![AI assistant](studysync/docs/images/group_ai.png)
 
-### 🛠️ Admin Panel
+### Admin Panel
 Admins see platform-wide stats and can manage all users and groups.
 
 ![Admin panel](studysync/docs/images/admin.png)
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Authentication** — register/login with JWT, bcrypt-hashed passwords, role-based access (student / admin).
 - **Study Groups** — create groups, join via a 6-character invite code, approve/reject join requests.
@@ -75,7 +75,7 @@ Admins see platform-wide stats and can manage all users and groups.
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer | Technologies |
 | --- | --- |
@@ -88,7 +88,7 @@ Admins see platform-wide stats and can manage all users and groups.
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/)
@@ -114,7 +114,7 @@ See [`studysync/README.md`](studysync/README.md) for more detail.
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 All backend configuration is via environment variables. Copy
 [`studysync/backend/.env.example`](studysync/backend/.env.example) to
@@ -123,6 +123,6 @@ All backend configuration is via environment variables. Copy
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE).
