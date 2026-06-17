@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">StudySync</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span id="user-name" class="text-gray-700 font-medium"></span>
+                    <button id="logout-btn" class="text-red-500 hover:text-red-700 font-medium">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- Welcome Section -->
+        <div class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">My Study Groups</h1>
+                <p class="text-gray-600">Manage your learning communities</p>
+            </div>
+            <div class="space-x-2">
+                <button id="open-create-modal" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition">
+                    + Create Group
+                </button>
+                <button id="open-join-modal" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow transition">
+                    Join via Code
+                </button>
+                <a href="admin.html" id="admin-link" class="hidden bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg shadow transition">
+                    Admin Panel
+                </a>
+            </div>
+        </div>
+
+        <!-- Groups Grid -->
+        <div id="groups-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Groups will be inserted here -->
+            <div class="col-span-full text-center py-10 text-gray-500">
+                Loading groups...
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Create Group Modal -->
+    <div id="create-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Create New Group</h2>
+            <form id="create-group-form">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+                    <input id="group-title" type="text" class="border rounded w-full py-2 px-3" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                    <input id="group-subject" type="text" class="border rounded w-full py-2 px-3" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+                    <textarea id="group-desc" class="border rounded w-full py-2 px-3"></textarea>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" id="close-create-modal" class="text-gray-500 hover:text-gray-700 px-4 py-2">Cancel</button>
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Join Group Modal -->
+    <div id="join-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Join Group</h2>
+            <form id="join-group-form">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Invite Code</label>
+                    <input id="join-code" type="text" class="border rounded w-full py-2 px-3" placeholder="Enter 6-character code" required>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" id="close-join-modal" class="text-gray-500 hover:text-gray-700 px-4 py-2">Cancel</button>
+                    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Join</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

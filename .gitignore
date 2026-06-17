@@ -1,0 +1,28 @@
+# ---- Secrets / environment ----
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# ---- Uploaded / runtime files ----
+studysync/backend/uploads/*
+!studysync/backend/uploads/.gitkeep
+
+# ---- Salesforce DX tooling (unrelated to the app) ----
+.sfdx/
+.sf/
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.log
