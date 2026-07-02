@@ -62,6 +62,33 @@ Admins see platform-wide stats and can manage all users and groups.
 
 ---
 
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Client["Browser (static frontend)"]
+        UI["HTML + Tailwind + Vanilla JS"]
+    end
+    subgraph Server["Node.js backend"]
+        API["Express REST API"]
+        WS["Socket.io (real-time chat)"]
+        AUTH["JWT auth + bcrypt"]
+        UP["Multer file uploads"]
+        AI["AI assistant (Gemini / OpenAI)"]
+    end
+    DB[("MongoDB (Mongoose)")]
+
+    UI -- "REST (fetch)" --> API
+    UI <-- "WebSocket" --> WS
+    API --> AUTH
+    API --> UP
+    API --> AI
+    API --> DB
+    WS --> DB
+```
+
+---
+
 ## Features
 
 - **Authentication** — register/login with JWT, bcrypt-hashed passwords, role-based access (student / admin).
